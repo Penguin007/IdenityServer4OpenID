@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Claims</h1>
+@using (Html.BeginForm("Logout", "Home"))
+{
+    <input type="submit" value="Logoff" />
+
+}
+<dl>
+    @foreach (var claim in User.Claims)
+    {
+        <dt>@claim.Type</dt>
+        <dd>@claim.Value</dd>
+    }
+</dl>
+

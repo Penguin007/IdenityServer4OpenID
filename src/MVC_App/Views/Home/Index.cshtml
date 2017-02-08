@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <h1>Claim Details:</h1>
+    @*@using (Html.BeginForm("LogOut", "Home"))
+    {
+        <input type="submit" value="Logout" />
+
+
+    }*@
+    <br />
+    <dl>
+        @foreach (var claim in User.Claims)
+        {
+            <dt>@claim.Type</dt>
+            <dd>@claim.Value</dd>
+
+           
+
+        }
+
+        @*<dt>Access Token</dt>
+        <dd>@await ViewContext.HttpContext.Authentication.GetTokenAsync("access_token")</dd>
+
+        <dt>refresh token</dt>
+        <dd>@await ViewContext.HttpContext.Authentication.GetTokenAsync("refresh_token")</dd>*@
+  
+    </dl>
+   
+
+
+
